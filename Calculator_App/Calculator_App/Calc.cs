@@ -38,9 +38,34 @@ namespace ConsoleCalculator
             return x / y;
         }
 
+         static public double Factorial(double x)
+        {
+            double factorial = x;
+
+            if (x == 0)
+            {
+                return 1;
+            }
+
+            for (var i = x - 1; i > 1; i--)
+            {
+                factorial *= i;
+
+            }
+            return factorial;
+        }
+
         static public double Sqrt(double num)
         {
             return Math.Sqrt(num);
+        }
+
+        static public double Power(double x, double y)
+        {
+            double temp = 1;
+            for (double i = 0; i < y; i++)
+                temp *= x;
+            return temp;
         }
 
         static public double NumInput()
@@ -58,8 +83,8 @@ namespace ConsoleCalculator
 
         static public bool OperatorInput(out string mathOperator)
         {
-            List<string> operatorWithSecondArgument = new List<string> { "+", "-", "*", "/", "%", "^" };
-            List<string> operatorWithOneArgument = new List<string> { "sqrt", "!" };
+            List<string> operatorWithSecondArgument = new List<string> { "+", "-", "*", "/", "%"};
+            List<string> operatorWithOneArgument = new List<string> { "sqrt", "!", "^" };
             while (true)
             {
                 mathOperator = Console.ReadLine();
