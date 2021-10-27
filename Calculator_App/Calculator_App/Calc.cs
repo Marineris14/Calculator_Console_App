@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,9 +38,34 @@ namespace ConsoleCalculator
             return x / y;
         }
 
-        static public double Sqrt(double num)
+        static public double Factorial(double x)
         {
-            return Math.Sqrt(num);
+            double factorial = x;
+
+            if (x == 0)
+            {
+                return 1;
+            }
+
+            for (var i = x - 1; i > 1; i--)
+            {
+                factorial *= i;
+
+            }
+            return factorial;
+        }
+
+        static public double Sqrt(double x)
+        {
+            return Math.Sqrt(x);
+        }
+
+        static public double Power(double x, double y)
+        {
+            double temp = 1;
+            for (double i = 0; i < y; i++)
+                temp *= x;
+            return temp;
         }
 
         static public double NumInput()
